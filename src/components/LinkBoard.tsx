@@ -50,7 +50,7 @@ const LinkBoard = ({
         <div className="space-y-2 flex flex-col">
           {(urls && urls.length != 0) ? urls.map((str, i) => {
             return <LinkIco key={i} id={i} removeHandler={() => linkRemoveHandler(i)} url={str} />;
-          }) : <p className="text-sm">Empty Board, Click the plus icon to add a link</p>}
+          }) : <p className="text-xs xs:text-sm">Empty Board, Click the plus icon to add a link</p>}
         </div>
       </div>
     </div>

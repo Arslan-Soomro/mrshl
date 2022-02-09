@@ -14,7 +14,8 @@ const Sidebar: FC = ({ children }) => {
   return (
     <div className="flex w-full h-full bg-gray-50">
 
-      <button className="absolute xs:hidden bg-purple-100 rounded-full p-2 z-20 right-10 bottom-10" onClick={() => dispatch({type: toggleBoardModal_ACT})}>
+      {/* Button For Mobile View */}
+      <button className="absolute shadow-xl xs:hidden bg-purple-100 rounded-full p-2 z-20 right-10 bottom-10" onClick={() => dispatch({type: toggleBoardModal_ACT})}>
         <ViewGridAddIcon className="w-8 h-8 text-purple-500 hover:text-purple-600 transition-colors active:text-purple-700" />
       </button>
 
