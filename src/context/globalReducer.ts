@@ -14,6 +14,7 @@ const globalReducer = (state: State_T, action: Action_T) => {
         ...state,
         modalType: "link",
         modalVisible: state.modalVisible ? false : true,
+        currentBoardId: action.payload?.boardId 
       };
     case updateBoardsData_ACT:
       if(action.payload){

@@ -5,5 +5,6 @@ export type Dispatch_T = (action: Action_T) => void;
 export type State_T = {
     modalVisible: boolean,
     modalType : 'board' | 'link',
-    boards: boardType[]
+    boards: boardType[],
+    currentBoardId: string | undefined, //Current Board that we need to insert the link in
 }
