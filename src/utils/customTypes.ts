@@ -2,7 +2,7 @@
 export interface boardType{
 
     name: string,
-    id: number,
+    id?: string,
     urls: string[]
 
 }

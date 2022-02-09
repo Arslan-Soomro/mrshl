@@ -10,7 +10,7 @@ const LinkBoard = ({
   name,
   urls,
 }: {
-  id: number;
+  id: string;
   name: string;
   urls: string[];
 }) => {
@@ -18,20 +18,19 @@ const LinkBoard = ({
 
   return (
     <div className="bg-white w-fit py-4 px-6 rounded min-w-[150px] max-w-[350px] shadow-md h-fit">
-      <div className="flex flex-row justify-between pb-6">
-        <h3 className="font-bold text-lg text-gray-800 truncate">{name}</h3>
+      <div className="flex flex-row justify-between items-center pb-6">
+        <h3 className="font-bold text-base xs:text-lg text-gray-800 truncate">{name}</h3>
         <div className="space-x-2 flex justify-center items-start">
           <button className="cursor-pointer">
-            <TrashIcon className="w-6 h-6 ml-2 cursor-pointer text-red-300 hover:text-red-400 active:text-red-500" />
+            <TrashIcon className="w-5 h-5 xs:w-6 xs:h-6 ml-2 cursor-pointer text-red-300 hover:text-red-400 active:text-red-500" />
           </button>
           <button
             className="cursor-pointer"
             onClick={() => {
-              dispatch({ type: toggleLinkModal_ACT });
-              //console.log(name);
+              dispatch({ type: toggleLinkModal_ACT, payload: { id : id } });
             }}
           >
-            <PlusIcon className="w-6 h-6 text-purple-500 hover:text-purple-600 active:text-purple-700" />
+            <PlusIcon className="w-5 h-5 xs:w-6 xs:h-6 text-purple-500 hover:text-purple-600 active:text-purple-700" />
           </button>
         </div>
       </div>

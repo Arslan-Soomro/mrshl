@@ -9,12 +9,12 @@ const LinkIco = ({ url }: { url: string }) => {
       <a
         href={url}
         target="_blank"
-        className="flex flex-row items-center text-sm space-x-2 cursor-pointer w-10/12"
+        className="flex flex-row items-center text-sm space-x-2 cursor-pointer w-9/12 xs:w-10/12"
       >
         <img src={extAndGenIco(url)} className="w-6 h-6" />
-        <p className="text-gray-600 hover:text-gray-700 active:text-gray-800 tracking-tighter truncate">{url}</p>
+        <p className="text-gray-600 hover:text-gray-700 active:text-gray-800 xs:text-sm text-xs tracking-tighter truncate">{url}</p>
       </a>
-      <TrashIcon className="w-6 h-6 ml-2 cursor-pointer text-red-300 hover:text-red-400 active:text-red-500" />
+      <TrashIcon className="w-5 h-5 xs:w-6 xs:h-6 ml-2 cursor-pointer text-red-300 hover:text-red-400 active:text-red-500" />
     </div>
   );
 };
