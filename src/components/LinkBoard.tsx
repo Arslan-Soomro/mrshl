@@ -9,10 +9,12 @@ const LinkBoard = ({
   id,
   name,
   urls,
+  removeHandler
 }: {
   id: string;
   name: string;
   urls: string[];
+  removeHandler: (id: string) => void;
 }) => {
   const [state, dispatch] = useContext(GlobalContext);
 
@@ -21,7 +23,7 @@ const LinkBoard = ({
       <div className="flex flex-row justify-between items-center pb-6">
         <h3 className="font-bold text-base xs:text-lg text-gray-800 truncate">{name}</h3>
         <div className="space-x-2 flex justify-center items-start">
-          <button className="cursor-pointer">
+          <button className="cursor-pointer" onClick={() => removeHandler(id)}>
             <TrashIcon className="w-5 h-5 xs:w-6 xs:h-6 ml-2 cursor-pointer text-red-300 hover:text-red-400 active:text-red-500" />
           </button>
           <button
@@ -36,9 +38,9 @@ const LinkBoard = ({
       </div>
       <div>
         <div className="space-y-2 flex flex-col">
-          {urls.map((str, i) => {
+          {(urls && urls.length != 0) ? urls.map((str, i) => {
             return <LinkIco key={i} url={str} />;
-          })}
+          }) : <p className="text-sm">Empty Board, Click the plus icon to add a link</p>}
         </div>
       </div>
     </div>
